@@ -66,6 +66,7 @@ for endpt in endpointslist:
 file1 = drive.CreateFile({'title': endpointslist[0]+'-01'})
 file1.SetContentString('\n'.join(sorted(mys)))
 file1.Upload()
+del file1
 print('All done!')
 while True:
     sleep(10000)
