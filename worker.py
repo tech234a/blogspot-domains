@@ -1,4 +1,4 @@
-import pickle, os, requests, pydrive
+import pickle, os, re, requests, pydrive
 from googleapiclient.discovery import build
 from google_auth_oauthlib.flow import InstalledAppFlow
 from google.auth.transport.requests import Request
@@ -49,7 +49,7 @@ for endpt in endpointslist:
         
         print('Completed request:', mylistrequest.url)
         if mylistrequest.status_code != 404:
-            mys.update(re.findall(r"https?:\/\/(?:w{3}.)?(.+?)\.", url)) #Thanks afrmtbl!
+            mys.update(re.findall(r"https?:\/\/(?:w{3}.)?(.+?)\.", mylistrequest.text)) #Thanks afrmtbl!
 
 file1 = drive.CreateFile({'title': endpointslist[0]+'-01'})
 file1.SetContentString('\n'.join(sorted(mys)))
