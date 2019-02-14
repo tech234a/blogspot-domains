@@ -1,11 +1,8 @@
-import pickle
-import os
+import pickle, os, requests, pydrive
 from googleapiclient.discovery import build
 from google_auth_oauthlib.flow import InstalledAppFlow
 from google.auth.transport.requests import Request
-import requests
 from time import sleep
-import pydrive
 
 from pydrive.auth import GoogleAuth
 from pydrive.drive import GoogleDrive
@@ -49,19 +46,9 @@ for endpt in endpointslist:
                 complete = True
         
         print('Completed request:', mylistrequest.url)
-        mylist = mylistrequest.text.split('\n')
-        if mylistrequest.status_code == 404:
-            mylist = []
-        del mylistrequest
-        if mylist:
-            mylist = [element.replace('http://', '') for element in mylist]
-            mylist = [element.replace('https://', '') for element in mylist]
-            mylist = [element.replace('.blogspot.com/', '') for element in mylist]
-            for element in range(0, len(mylist)):
-                if mylist[element].startswith('www.'):
-                    mylist[element] = mylist[element].replace('www.', '', 1)
-            mys.update(mylist)
-            del mylist
+        if mylistrequest.status_code != 404:
+            mys.update(re.findall(r"https?:\/\/(?:w{3}.)?(.+?)\.", url))
+
 file1 = drive.CreateFile({'title': endpointslist[0]+'-01'})
 file1.SetContentString('\n'.join(sorted(mys)))
 file1.Upload()
