@@ -62,7 +62,6 @@ for endpt in endpointslist:
                     mylist[element] = mylist[element].replace('www.', '', 1)
             mys.update(mylist)
             del mylist
-        sleep(0.1)
 file1 = drive.CreateFile({'title': endpointslist[0]+'-01'})
 file1.SetContentString('\n'.join(sorted(mys)))
 file1.Upload()
