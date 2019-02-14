@@ -31,6 +31,8 @@ except:
 for endpt in endpointslist:
     print('\nNew endpoint:', endpt, '\n')
     max = requests.get(endpt+'?url=*.blogspot.com/&fl=url&filter=~url:.*\.com/$&limit=999999&showNumPages=true').json()["pages"]
+    #Cite the link format origin
+    #Thanks jopik for referring me to the CommonCrawl
     for i in range(0, max):
         complete = False
         while complete == False:
@@ -47,7 +49,7 @@ for endpt in endpointslist:
         
         print('Completed request:', mylistrequest.url)
         if mylistrequest.status_code != 404:
-            mys.update(re.findall(r"https?:\/\/(?:w{3}.)?(.+?)\.", url))
+            mys.update(re.findall(r"https?:\/\/(?:w{3}.)?(.+?)\.", url)) #Thanks afrmtbl!
 
 file1 = drive.CreateFile({'title': endpointslist[0]+'-01'})
 file1.SetContentString('\n'.join(sorted(mys)))
