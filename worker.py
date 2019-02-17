@@ -23,11 +23,19 @@ gauth.SaveCredentialsFile("credentials.txt")
 
 drive = GoogleDrive(gauth)
 
-mysf = drive.CreateFile({'id': str(os.environ['driveid'])})
-mys = set(mysf.GetContentString().split("\n"))
-del mysf
+#mysf = drive.CreateFile({'id': str(os.environ['driveid'])})
+#mys = set(mysf.GetContentString().split("\n"))
+#del mysf
 
 endpointslist = [str(os.environ['index'])] #['http://index.commoncrawl.org/CC-MAIN-2019-04-index']#, 'http://index.commoncrawl.org/CC-MAIN-2018-51-index', 'http://index.commoncrawl.org/CC-MAIN-2018-47-index', 'http://index.commoncrawl.org/CC-MAIN-2018-43-index', 'http://index.commoncrawl.org/CC-MAIN-2018-39-index', 'http://index.commoncrawl.org/CC-MAIN-2018-34-index', 'http://index.commoncrawl.org/CC-MAIN-2018-30-index', 'http://index.commoncrawl.org/CC-MAIN-2018-26-index', 'http://index.commoncrawl.org/CC-MAIN-2018-22-index', 'http://index.commoncrawl.org/CC-MAIN-2018-17-index', 'http://index.commoncrawl.org/CC-MAIN-2018-13-index', 'http://index.commoncrawl.org/CC-MAIN-2018-09-index', 'http://index.commoncrawl.org/CC-MAIN-2018-05-index', 'http://index.commoncrawl.org/CC-MAIN-2017-51-index', 'http://index.commoncrawl.org/CC-MAIN-2017-47-index', 'http://index.commoncrawl.org/CC-MAIN-2017-43-index', 'http://index.commoncrawl.org/CC-MAIN-2017-39-index', 'http://index.commoncrawl.org/CC-MAIN-2017-34-index', 'http://index.commoncrawl.org/CC-MAIN-2017-30-index', 'http://index.commoncrawl.org/CC-MAIN-2017-26-index', 'http://index.commoncrawl.org/CC-MAIN-2017-22-index', 'http://index.commoncrawl.org/CC-MAIN-2017-17-index', 'http://index.commoncrawl.org/CC-MAIN-2017-13-index', 'http://index.commoncrawl.org/CC-MAIN-2017-09-index', 'http://index.commoncrawl.org/CC-MAIN-2017-04-index', 'http://index.commoncrawl.org/CC-MAIN-2016-50-index', 'http://index.commoncrawl.org/CC-MAIN-2016-44-index', 'http://index.commoncrawl.org/CC-MAIN-2016-40-index', 'http://index.commoncrawl.org/CC-MAIN-2016-36-index', 'http://index.commoncrawl.org/CC-MAIN-2016-30-index', 'http://index.commoncrawl.org/CC-MAIN-2016-26-index', 'http://index.commoncrawl.org/CC-MAIN-2016-22-index', 'http://index.commoncrawl.org/CC-MAIN-2016-18-index', 'http://index.commoncrawl.org/CC-MAIN-2016-07-index', 'http://index.commoncrawl.org/CC-MAIN-2015-48-index', 'http://index.commoncrawl.org/CC-MAIN-2015-40-index', 'http://index.commoncrawl.org/CC-MAIN-2015-35-index', 'http://index.commoncrawl.org/CC-MAIN-2015-32-index', 'http://index.commoncrawl.org/CC-MAIN-2015-27-index', 'http://index.commoncrawl.org/CC-MAIN-2015-22-index', 'http://index.commoncrawl.org/CC-MAIN-2015-18-index', 'http://index.commoncrawl.org/CC-MAIN-2015-14-index', 'http://index.commoncrawl.org/CC-MAIN-2015-11-index', 'http://index.commoncrawl.org/CC-MAIN-2015-06-index', 'http://index.commoncrawl.org/CC-MAIN-2014-52-index', 'http://index.commoncrawl.org/CC-MAIN-2014-49-index', 'http://index.commoncrawl.org/CC-MAIN-2014-42-index', 'http://index.commoncrawl.org/CC-MAIN-2014-41-index', 'http://index.commoncrawl.org/CC-MAIN-2014-35-index', 'http://index.commoncrawl.org/CC-MAIN-2014-23-index', 'http://index.commoncrawl.org/CC-MAIN-2014-15-index', 'http://index.commoncrawl.org/CC-MAIN-2014-10-index', 'http://index.commoncrawl.org/CC-MAIN-2013-48-index', 'http://index.commoncrawl.org/CC-MAIN-2013-20-index']
+
+#try:
+mys = set(requests.get("https://blogspot-domains.herokuapp.com/list/domains.txt").text.split("\n"))
+#except:
+#    print('Exception!')
+#    sleep(60)
+#    mys = set(requests.get("https://blogspot-domains.herokuapp.com/list/domains.txt").text.split("\n"))
+
 #try:
 #    mys = set(requests.get("https://gist.githubusercontent.com/tech234a/6b44df89870d703ca909d811e74d51b8/raw").text.split("\n"))
 #except:
