@@ -344,7 +344,7 @@ file1 = drive.CreateFile({'title': endpointslist[0]+'-01'})
 #os.system('sort -u -o \'domains_sorted.txt\' \'domains.txt\'')
 #file1.SetContentFile('domains_sorted.txt')
 if not gracefulshutdown:
-    os.system('sort -u -o \'domains_sorted.txt\' \'domains.txt\'')
+    os.system('sort -u -S 850M -o \'domains_sorted.txt\' \'domains.txt\'')
     file1.SetContentFile('domains_sorted.txt')
 else:
     file1.SetContentFile('domains.txt')
