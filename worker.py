@@ -251,15 +251,15 @@ gracefulshutdown = False
 
 #Restore previous values if necessary
 
-print('Waiting 45 seconds to ensure previous instance has shutdown...')
-sleep(45)
+print('Waiting 90 seconds to ensure previous instance has shutdown...')
+sleep(90)
 
 print('Restoring data...')
 
 #try:
 myrnew = myreqsess_get("https://blogspot-domains.herokuapp.com/list/domains.txt")
 #mys = set(myrnew.text.split("\n"))
-myftow = open('domains.txt', 'w')
+myftow = open('domains.txt', 'a')
 myftow_write = myftow.write
 myftow_write(myrnew.text)
 del myrnew
@@ -268,7 +268,7 @@ if int(getcell('A3')) == 0:
     start_index_override = int(getcell('A1'))
     start_page_override = int(getcell('A2'))
     print('No override, '+str(start_index_override)+', '+str(start_page_override))
-    updatecells('A3', 0)
+    #updatecells('A3', 0)
 else:
     start_index_override = 0
     start_page_override = 0
@@ -338,12 +338,10 @@ for endpt in endpointslist:
 
     appendtosheet([endpt, 'Cleaning up file'])
     #Clean up on endpoint completion
-    os.system('sort -u -S 850M -o \'domains_sorted.txt\' \'domains.txt\'')
-    os.system('cp \'domains_sorted.txt\' \'domains.txt\'')
-    os.system('rm \'domains_sorted.txt\'')
-              
+    os.system('sort -S 850M domains.txt | uniq > domains_sorted.txt')
+    
     file1 = drive.CreateFile({'title': endpointslist[0]+'-01'})
-    file1.SetContentFile('domains.txt')
+    file1.SetContentFile('domains_sorted.txt')
     file1.Upload()
     heroku3.from_key(os.environ['heroku-key']).apps()['blogspot-domains'].config()['driveid'] = file1['id']
     del file1
@@ -354,7 +352,7 @@ file1 = drive.CreateFile({'title': endpointslist[0]+'-01'})
 #os.system('sort -u -o \'domains_sorted.txt\' \'domains.txt\'')
 #file1.SetContentFile('domains_sorted.txt')
 if not gracefulshutdown:
-    os.system('sort -u -S 850M -o \'domains_sorted.txt\' \'domains.txt\'')
+    os.system('sort -S 850M domains.txt | uniq > domains_sorted.txt')
     file1.SetContentFile('domains_sorted.txt')
 else:
     file1.SetContentFile('domains.txt')
