@@ -336,7 +336,11 @@ for endpt in endpointslist:
     if killer.kill_now:
         break
 
-
+    appendtosheet([endpt, 'Cleaning up file'])
+    #Clean up on endpoint completion
+    os.system('sort -u -S 850M -o \'domains_sorted.txt\' \'domains.txt\'')
+    os.system('cp \'domains_sorted.txt\' \'domains.txt\'')
+    os.system('rm \'domains_sorted.txt\')
     appendtosheet([endpt, 'Finished Endpoint'])
 
 file1 = drive.CreateFile({'title': endpointslist[0]+'-01'})
