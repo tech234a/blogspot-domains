@@ -338,7 +338,7 @@ for endpt in endpointslist:
 
     appendtosheet([endpt, 'Cleaning up file'])
     #Clean up on endpoint completion
-    os.system('sort -S 850M domains.txt | uniq > domains_sorted.txt')
+    os.system('tr -d \'\\r\' < domains.txt | sort -S 850M -u  > domains_sorted.txt') #Thanks @jopik
     
     file1 = drive.CreateFile({'title': endpointslist[0]+'-01'})
     file1.SetContentFile('domains_sorted.txt')
@@ -352,7 +352,7 @@ file1 = drive.CreateFile({'title': endpointslist[0]+'-01'})
 #os.system('sort -u -o \'domains_sorted.txt\' \'domains.txt\'')
 #file1.SetContentFile('domains_sorted.txt')
 if not gracefulshutdown:
-    os.system('sort -S 850M domains.txt | uniq > domains_sorted.txt')
+    os.system('tr -d \'\\r\' < domains.txt | sort -S 850M -u  > domains_sorted.txt') #Thanks @jopik
     file1.SetContentFile('domains_sorted.txt')
 else:
     file1.SetContentFile('domains.txt')
