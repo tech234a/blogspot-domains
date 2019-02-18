@@ -275,7 +275,7 @@ else:
     print('Override, '+str(start_index_override)+', '+str(start_page_override))
 
 for i in range(0, start_index_override):
-    print('Skipping: '+endpointslist.pop(i))
+    print('Skipping: '+endpointslist.pop(0))
 
 for endpt in endpointslist:
     print('\nNew endpoint:', endpt, '\n')
