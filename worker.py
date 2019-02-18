@@ -289,7 +289,7 @@ for endpt in endpointslist:
         startnum = start_page_override
     for i in range(startnum, max):
         if killer.kill_now:
-            savestate(endpointslist.index(endpt), i)
+            savestate(str(os.environ['index']).split(',').index(endpt), i)
             #updatecells('A1', i)
             #updatecells('A2', endpointslist.index(endpt))
             #updatecells('A3', 0)
@@ -327,7 +327,7 @@ for endpt in endpointslist:
             myftow_write("\n".join(mylist))
             del mylist
         if killer.kill_now:
-            savestate(endpointslist.index(endpt), i)
+            savestate(str(os.environ['index']).split(',').index(endpt), i)
             #updatecells('A1', i)
             #updatecells('A2', endpointslist.index(endpt))
             #updatecells('A3', 0)
@@ -340,7 +340,7 @@ for endpt in endpointslist:
     #Clean up on endpoint completion
     os.system('tr -d \'\\r\' < domains.txt | sort -S 850M -u  > domains_sorted.txt') #Thanks @jopik
     
-    file1 = drive.CreateFile({'title': endpointslist[0]+'-01'})
+    file1 = drive.CreateFile({'title': endpt+'-01'})
     file1.SetContentFile('domains_sorted.txt')
     file1.Upload()
     heroku3.from_key(os.environ['heroku-key']).apps()['blogspot-domains'].config()['driveid'] = file1['id']
