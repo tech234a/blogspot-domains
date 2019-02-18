@@ -341,6 +341,12 @@ for endpt in endpointslist:
     os.system('sort -u -S 850M -o \'domains_sorted.txt\' \'domains.txt\'')
     os.system('cp \'domains_sorted.txt\' \'domains.txt\'')
     os.system('rm \'domains_sorted.txt\')
+              
+    file1 = drive.CreateFile({'title': endpointslist[0]+'-01'})
+    file1.SetContentFile('domains.txt')
+    file1.Upload()
+    heroku3.from_key(os.environ['heroku-key']).apps()['blogspot-domains'].config()['driveid'] = file1['id']
+    del file1
     appendtosheet([endpt, 'Finished Endpoint'])
 
 file1 = drive.CreateFile({'title': endpointslist[0]+'-01'})
