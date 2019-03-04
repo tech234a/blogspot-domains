@@ -232,7 +232,7 @@ drive = GoogleDrive(gauth)
 #mys = set(mysf.GetContentString().split("\n"))
 #del mysf
 
-endpointslist = str(os.environ['index']).split(',') #['http://index.commoncrawl.org/CC-MAIN-2019-04-index']#, 'http://index.commoncrawl.org/CC-MAIN-2018-51-index', 'http://index.commoncrawl.org/CC-MAIN-2018-47-index', 'http://index.commoncrawl.org/CC-MAIN-2018-43-index', 'http://index.commoncrawl.org/CC-MAIN-2018-39-index', 'http://index.commoncrawl.org/CC-MAIN-2018-34-index', 'http://index.commoncrawl.org/CC-MAIN-2018-30-index', 'http://index.commoncrawl.org/CC-MAIN-2018-26-index', 'http://index.commoncrawl.org/CC-MAIN-2018-22-index', 'http://index.commoncrawl.org/CC-MAIN-2018-17-index', 'http://index.commoncrawl.org/CC-MAIN-2018-13-index', 'http://index.commoncrawl.org/CC-MAIN-2018-09-index', 'http://index.commoncrawl.org/CC-MAIN-2018-05-index', 'http://index.commoncrawl.org/CC-MAIN-2017-51-index', 'http://index.commoncrawl.org/CC-MAIN-2017-47-index', 'http://index.commoncrawl.org/CC-MAIN-2017-43-index', 'http://index.commoncrawl.org/CC-MAIN-2017-39-index', 'http://index.commoncrawl.org/CC-MAIN-2017-34-index', 'http://index.commoncrawl.org/CC-MAIN-2017-30-index', 'http://index.commoncrawl.org/CC-MAIN-2017-26-index', 'http://index.commoncrawl.org/CC-MAIN-2017-22-index', 'http://index.commoncrawl.org/CC-MAIN-2017-17-index', 'http://index.commoncrawl.org/CC-MAIN-2017-13-index', 'http://index.commoncrawl.org/CC-MAIN-2017-09-index', 'http://index.commoncrawl.org/CC-MAIN-2017-04-index', 'http://index.commoncrawl.org/CC-MAIN-2016-50-index', 'http://index.commoncrawl.org/CC-MAIN-2016-44-index', 'http://index.commoncrawl.org/CC-MAIN-2016-40-index', 'http://index.commoncrawl.org/CC-MAIN-2016-36-index', 'http://index.commoncrawl.org/CC-MAIN-2016-30-index', 'http://index.commoncrawl.org/CC-MAIN-2016-26-index', 'http://index.commoncrawl.org/CC-MAIN-2016-22-index', 'http://index.commoncrawl.org/CC-MAIN-2016-18-index', 'http://index.commoncrawl.org/CC-MAIN-2016-07-index', 'http://index.commoncrawl.org/CC-MAIN-2015-48-index', 'http://index.commoncrawl.org/CC-MAIN-2015-40-index', 'http://index.commoncrawl.org/CC-MAIN-2015-35-index', 'http://index.commoncrawl.org/CC-MAIN-2015-32-index', 'http://index.commoncrawl.org/CC-MAIN-2015-27-index', 'http://index.commoncrawl.org/CC-MAIN-2015-22-index', 'http://index.commoncrawl.org/CC-MAIN-2015-18-index', 'http://index.commoncrawl.org/CC-MAIN-2015-14-index', 'http://index.commoncrawl.org/CC-MAIN-2015-11-index', 'http://index.commoncrawl.org/CC-MAIN-2015-06-index', 'http://index.commoncrawl.org/CC-MAIN-2014-52-index', 'http://index.commoncrawl.org/CC-MAIN-2014-49-index', 'http://index.commoncrawl.org/CC-MAIN-2014-42-index', 'http://index.commoncrawl.org/CC-MAIN-2014-41-index', 'http://index.commoncrawl.org/CC-MAIN-2014-35-index', 'http://index.commoncrawl.org/CC-MAIN-2014-23-index', 'http://index.commoncrawl.org/CC-MAIN-2014-15-index', 'http://index.commoncrawl.org/CC-MAIN-2014-10-index', 'http://index.commoncrawl.org/CC-MAIN-2013-48-index', 'http://index.commoncrawl.org/CC-MAIN-2013-20-index']
+endpointslist = ['http://web.archive.org/cdx/search/cdx'] #str(os.environ['index']).split(',') #['http://index.commoncrawl.org/CC-MAIN-2019-04-index']#, 'http://index.commoncrawl.org/CC-MAIN-2018-51-index', 'http://index.commoncrawl.org/CC-MAIN-2018-47-index', 'http://index.commoncrawl.org/CC-MAIN-2018-43-index', 'http://index.commoncrawl.org/CC-MAIN-2018-39-index', 'http://index.commoncrawl.org/CC-MAIN-2018-34-index', 'http://index.commoncrawl.org/CC-MAIN-2018-30-index', 'http://index.commoncrawl.org/CC-MAIN-2018-26-index', 'http://index.commoncrawl.org/CC-MAIN-2018-22-index', 'http://index.commoncrawl.org/CC-MAIN-2018-17-index', 'http://index.commoncrawl.org/CC-MAIN-2018-13-index', 'http://index.commoncrawl.org/CC-MAIN-2018-09-index', 'http://index.commoncrawl.org/CC-MAIN-2018-05-index', 'http://index.commoncrawl.org/CC-MAIN-2017-51-index', 'http://index.commoncrawl.org/CC-MAIN-2017-47-index', 'http://index.commoncrawl.org/CC-MAIN-2017-43-index', 'http://index.commoncrawl.org/CC-MAIN-2017-39-index', 'http://index.commoncrawl.org/CC-MAIN-2017-34-index', 'http://index.commoncrawl.org/CC-MAIN-2017-30-index', 'http://index.commoncrawl.org/CC-MAIN-2017-26-index', 'http://index.commoncrawl.org/CC-MAIN-2017-22-index', 'http://index.commoncrawl.org/CC-MAIN-2017-17-index', 'http://index.commoncrawl.org/CC-MAIN-2017-13-index', 'http://index.commoncrawl.org/CC-MAIN-2017-09-index', 'http://index.commoncrawl.org/CC-MAIN-2017-04-index', 'http://index.commoncrawl.org/CC-MAIN-2016-50-index', 'http://index.commoncrawl.org/CC-MAIN-2016-44-index', 'http://index.commoncrawl.org/CC-MAIN-2016-40-index', 'http://index.commoncrawl.org/CC-MAIN-2016-36-index', 'http://index.commoncrawl.org/CC-MAIN-2016-30-index', 'http://index.commoncrawl.org/CC-MAIN-2016-26-index', 'http://index.commoncrawl.org/CC-MAIN-2016-22-index', 'http://index.commoncrawl.org/CC-MAIN-2016-18-index', 'http://index.commoncrawl.org/CC-MAIN-2016-07-index', 'http://index.commoncrawl.org/CC-MAIN-2015-48-index', 'http://index.commoncrawl.org/CC-MAIN-2015-40-index', 'http://index.commoncrawl.org/CC-MAIN-2015-35-index', 'http://index.commoncrawl.org/CC-MAIN-2015-32-index', 'http://index.commoncrawl.org/CC-MAIN-2015-27-index', 'http://index.commoncrawl.org/CC-MAIN-2015-22-index', 'http://index.commoncrawl.org/CC-MAIN-2015-18-index', 'http://index.commoncrawl.org/CC-MAIN-2015-14-index', 'http://index.commoncrawl.org/CC-MAIN-2015-11-index', 'http://index.commoncrawl.org/CC-MAIN-2015-06-index', 'http://index.commoncrawl.org/CC-MAIN-2014-52-index', 'http://index.commoncrawl.org/CC-MAIN-2014-49-index', 'http://index.commoncrawl.org/CC-MAIN-2014-42-index', 'http://index.commoncrawl.org/CC-MAIN-2014-41-index', 'http://index.commoncrawl.org/CC-MAIN-2014-35-index', 'http://index.commoncrawl.org/CC-MAIN-2014-23-index', 'http://index.commoncrawl.org/CC-MAIN-2014-15-index', 'http://index.commoncrawl.org/CC-MAIN-2014-10-index', 'http://index.commoncrawl.org/CC-MAIN-2013-48-index', 'http://index.commoncrawl.org/CC-MAIN-2013-20-index']
 
 killer = GracefulKiller()
 
@@ -257,7 +257,7 @@ sleep(90)
 print('Restoring data...')
 
 #try:
-myrnew = myreqsess_get("https://blogspot-domains.herokuapp.com/list/domains.txt")
+myrnew = myreqsess_get("https://blogspot-domains.herokuapp.com/list/domains.txt") #'http://blogstore.bot.nu/worker/domains.txt')
 #mys = set(myrnew.text.split("\n"))
 myftow = open('domains.txt', 'a')
 myftow_write = myftow.write
@@ -280,7 +280,7 @@ for i in range(0, start_index_override):
 for endpt in endpointslist:
     print('\nNew endpoint:', endpt, '\n')
     appendtosheet([endpt, 'New Endpoint'])
-    max = myreqsess_get(endpt+'?url=*.blogspot.com/&fl=url&filter=~url:.*\.com/$&limit=999999&showNumPages=true').json()["pages"]
+    max = 217044 #Web Archive #myreqsess_get(endpt+'?url=*.blogspot.com/&fl=url&filter=~url:.*\.com/$&limit=999999&showNumPages=true').json()["pages"]
     #Cite the link format origin
     #Thanks jopik for referring me to the CommonCrawl
     startnum = 0
@@ -289,7 +289,7 @@ for endpt in endpointslist:
         startnum = start_page_override
     for i in range(startnum, max):
         if killer.kill_now:
-            savestate(str(os.environ['index']).split(',').index(endpt), i)
+            savestate(0, i)
             #updatecells('A1', i)
             #updatecells('A2', endpointslist.index(endpt))
             #updatecells('A3', 0)
@@ -297,25 +297,28 @@ for endpt in endpointslist:
             break
         complete = False
         while complete == False:
-            mylistrequest = myreqsess_get(endpt+'?url=*.blogspot.com/&fl=url&filter=~url:.*\.com/$&limit=999999&page='+str(i))
+            mylistrequest = myreqsess_get(endpt+'?url=blogspot.com&matchType=domain&fl=original&collapse=original&filter=~original:@blogspot.com&page='+str(i))
             complete = mylistrequest.ok
             if not complete and mylistrequest.status_code != 404:
                 print('Not ok!')
                 print(mylistrequest.status_code)
                 print(mylistrequest.text)
                 sleep(60)
-                mylistrequest = myreqsess_get(endpt+'?url=*.blogspot.com/&fl=url&filter=~url:.*\.com/$&limit=999999&page='+str(i))
+                mylistrequest = myreqsess_get(endpt+'?url=blogspot.com&matchType=domain&fl=original&collapse=original&filter=~original:@blogspot.com&page='+str(i))
             if mylistrequest.status_code == 404:
                 complete = True
 
         print('Completed request:', mylistrequest.url)
         #if mylistrequest.status_code != 404:
         #    mys.update(re.findall(r"(?:https?:\/\/)?(?:w{3}\.)?(.+?)\.blogspot\.com", mylistrequest.text)) #Thanks afrmtbl!
-        mylist = mylistrequest.text.split('\n')
-        if mylistrequest.status_code == 404:
+        mylistrequest_text = mylistrequest.text.replace("@", ".")
+        mylist = mylistrequest_text.split('\n')
+        skip = False
+        if mylistrequest.status_code == 404 or mylistrequest_text.strip() == '':
             mylist = []
+            skip = True
         #el mylistrequest
-        if mylist:
+        if not skip:
             mylist = [extrurl(element).subdomain.split('.')[-1] for element in mylist]
         #    mylist = [element.replace('http://', '') for element in mylist]
         #    mylist = [element.replace('https://', '') for element in mylist]
@@ -325,9 +328,10 @@ for endpt in endpointslist:
         #            mylist[element] = mylist[element].replace('www.', '', 1)
             #mys.update(mylist)
             myftow_write("\n".join(mylist))
+            print(mylist)
             del mylist
         if killer.kill_now:
-            savestate(str(os.environ['index']).split(',').index(endpt), i)
+            savestate(0, i)
             #updatecells('A1', i)
             #updatecells('A2', endpointslist.index(endpt))
             #updatecells('A3', 0)
